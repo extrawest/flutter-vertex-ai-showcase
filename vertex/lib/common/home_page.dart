@@ -18,6 +18,12 @@ class HomePage extends StatelessWidget {
             },
             child: const Text('Describe Image'),
           ),
+          TextButton(
+            onPressed: () {
+              context.push(textCompletionScreen);
+            },
+            child: const Text('Text Completion'),
+          ),
         ],
       ),
     );

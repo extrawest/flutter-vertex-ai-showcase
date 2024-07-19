@@ -1,12 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'common/router.dart';
-import 'common/services/vertex_service.dart';
-import 'features/image_description/bloc/image_description_bloc.dart';
-import 'features/image_description/screens/image_description_screen.dart';
-
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
