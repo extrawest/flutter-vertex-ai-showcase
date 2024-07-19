@@ -14,9 +14,9 @@ class MultiModalInitial extends MultiModalState {
 }
 
 class MultiModalResponse extends MultiModalState {
-  final String responseText;
+  final String response;
 
-  const MultiModalResponse(this.responseText) : super(responseText);
+  const MultiModalResponse(this.response) : super(response);
 
   @override
   List<Object> get props => [responseText];

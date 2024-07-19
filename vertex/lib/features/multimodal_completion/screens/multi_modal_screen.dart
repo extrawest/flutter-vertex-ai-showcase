@@ -28,7 +28,7 @@ class _MultiModalScreenState extends State<MultiModalScreen> {
         children: [
           ElevatedButton(
             onPressed: () async {
-              String imagePath = await pickImage();
+              final String imagePath = await pickImage();
               setState(() {
                 selectedImage = imagePath;
               });
@@ -45,7 +45,6 @@ class _MultiModalScreenState extends State<MultiModalScreen> {
                   width: 50,
                   height: 50,
                   child: Align(
-                    alignment: Alignment.center,
                     child: CircularProgressIndicator(),
                   ),
                 );
@@ -69,7 +68,7 @@ class _MultiModalScreenState extends State<MultiModalScreen> {
                 );
               }
             },
-          )
+          ),
         ],
       ),
     );
