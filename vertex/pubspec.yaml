@@ -41,6 +41,8 @@ dependencies:
   equatable: ^2.0.5
   flutter_markdown: ^0.7.3
   image_picker: ^1.1.2
+  go_router: ^14.1.4
+
 
 dev_dependencies:
   flutter_test:
