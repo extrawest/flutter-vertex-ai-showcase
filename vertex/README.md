@@ -53,4 +53,5 @@ From your Flutter project directory, run the following command to start the app 
 
 
 
-![Video Preview](video/vertex-ai.mp4)
+![Video Preview](video/vertex-image.mp4)
+![Video Preview](video/vertex-text.mp4)
