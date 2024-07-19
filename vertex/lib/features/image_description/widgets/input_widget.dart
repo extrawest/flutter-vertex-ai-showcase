@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/multi_modal_bloc.dart';
+import '../bloc/image_description_bloc.dart';
 
 class InputWidget extends StatelessWidget {
   final String selectedImage;
@@ -14,8 +14,8 @@ class InputWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Future<void> handleSubmit(String text) async {
       _controller.clear();
-      BlocProvider.of<MultiModalBloc>(context).add(
-        MultiModalFetchData(text: text, imagePath: selectedImage),
+      BlocProvider.of<ImageDescriptionBloc>(context).add(
+        ImageDescriptionFetchData(text: text, imagePath: selectedImage),
       );
     }
 

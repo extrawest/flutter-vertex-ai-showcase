@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/multi_modal_bloc.dart';
+import '../bloc/image_description_bloc.dart';
 import '../utils/image_picker.dart';
 import '../widgets/input_widget.dart';
 
-class MultiModalScreen extends StatefulWidget {
-  const MultiModalScreen({super.key, required this.title});
+class ImageDescriptionScreen extends StatefulWidget {
+  const ImageDescriptionScreen({super.key, this.title});
 
-  final String title;
+  final String? title;
 
   @override
-  State<MultiModalScreen> createState() => _MultiModalScreenState();
+  State<ImageDescriptionScreen> createState() => _ImageDescriptionScreenState();
 }
 
-class _MultiModalScreenState extends State<MultiModalScreen> {
+class _ImageDescriptionScreenState extends State<ImageDescriptionScreen> {
   String selectedImage = '';
 
   @override
@@ -22,7 +22,7 @@ class _MultiModalScreenState extends State<MultiModalScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text(widget.title ?? ''),
       ),
       body: Column(
         children: [
@@ -38,9 +38,9 @@ class _MultiModalScreenState extends State<MultiModalScreen> {
           InputWidget(
             selectedImage: selectedImage,
           ),
-          BlocBuilder<MultiModalBloc, MultiModalState>(
+          BlocBuilder<ImageDescriptionBloc, ImageDescriptionState>(
             builder: (context, state) {
-              if (state is MultiModalLoading) {
+              if (state is ImageDescriptionLoading) {
                 return const SizedBox(
                   width: 50,
                   height: 50,
@@ -48,11 +48,11 @@ class _MultiModalScreenState extends State<MultiModalScreen> {
                     child: CircularProgressIndicator(),
                   ),
                 );
-              } else if (state is MultiModalResponse) {
+              } else if (state is ImageDescriptionResponse) {
                 return Expanded(
                   child: Text(state.responseText),
                 );
-              } else if (state is MultiModalError) {
+              } else if (state is ImageDescriptionError) {
                 // Return an error message widget
                 return Expanded(
                   child: Center(
