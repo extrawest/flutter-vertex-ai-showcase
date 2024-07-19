@@ -3,12 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/image_description_bloc.dart';
 import '../utils/image_picker.dart';
-import '../widgets/input_widget.dart';
 
 class ImageDescriptionScreen extends StatefulWidget {
-  const ImageDescriptionScreen({super.key, this.title});
-
-  final String? title;
+  const ImageDescriptionScreen({super.key});
 
   @override
   State<ImageDescriptionScreen> createState() => _ImageDescriptionScreenState();
@@ -22,7 +19,7 @@ class _ImageDescriptionScreenState extends State<ImageDescriptionScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title ?? ''),
+        title: const Text('Image description'),
       ),
       body: Column(
         children: [
@@ -35,9 +32,16 @@ class _ImageDescriptionScreenState extends State<ImageDescriptionScreen> {
             },
             child: const Text('Upload Image'),
           ),
-          InputWidget(
-            selectedImage: selectedImage,
-          ),
+          if (selectedImage.isNotEmpty) Image.asset(selectedImage),
+          if (selectedImage.isNotEmpty)
+            ElevatedButton(
+              onPressed: () async {
+                BlocProvider.of<ImageDescriptionBloc>(context).add(
+                  ImageDescriptionFetchData(imagePath: selectedImage, text: 'Describe Image'),
+                );
+              },
+              child: const Text('Describe Image'),
+            ),
           BlocBuilder<ImageDescriptionBloc, ImageDescriptionState>(
             builder: (context, state) {
               if (state is ImageDescriptionLoading) {
