@@ -10,25 +10,25 @@ class InputWidget extends StatelessWidget {
 
   final TextEditingController _controller = TextEditingController();
 
+  Future<void> handleSubmit({required BuildContext context, required String text}) async {
+    _controller.clear();
+    BlocProvider.of<TextCompletionBloc>(context).add(
+      TextCompletionFetchData(text: text),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    Future<void> handleSubmit(String text) async {
-      _controller.clear();
-      BlocProvider.of<TextCompletionBloc>(context).add(
-        TextCompletionFetchData(text: text),
-      );
-    }
-
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextField(
         controller: _controller,
-        onSubmitted: handleSubmit,
+        onSubmitted: (text) => handleSubmit(context: context, text: text),
         decoration: InputDecoration(
           labelText: 'Ask a question',
           suffixIcon: IconButton(
             icon: const Icon(Icons.send),
-            onPressed: () => handleSubmit(_controller.text),
+            onPressed: () => handleSubmit(context: context, text: _controller.text),
           ),
         ),
       ),
