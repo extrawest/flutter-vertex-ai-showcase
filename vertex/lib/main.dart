@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           create: (content) => MultiModalBloc(
             vertexService: content.read<VertexService>(),
           ),
-          child: const MultiModalScreen(title: 'Flutter Demo Home Page'),
+          child: const MultiModalScreen(title: 'Flutter Vertex Ai Demo'),
         ),
       ),
     );
