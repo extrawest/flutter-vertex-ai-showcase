@@ -35,4 +35,14 @@ class VertexService {
     }
     return response.text ?? '';
   }
+
+  Future<String> getCompletionResponse( String text) async {
+    final model = await initVertexAIModel();
+
+    final prompt = [Content.text(text)];
+
+    final response = await model.generateContent(prompt);
+
+    return response.text ?? '';
+  }
 }
