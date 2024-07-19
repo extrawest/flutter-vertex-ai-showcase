@@ -13,7 +13,7 @@ class VertexService {
     return model;
   }
 
-  Future<String> getTextResponse({required String imagePath, required String text}) async {
+  Future<String> getDescribeImageResponse({required String imagePath, required String text}) async {
     final model = await initVertexAIModel();
     final List<({Image? image, String? text, bool fromUser})> generatedContent = <({Image? image, String? text, bool fromUser})>[];
 
