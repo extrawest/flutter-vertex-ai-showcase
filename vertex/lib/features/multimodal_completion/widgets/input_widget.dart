@@ -5,19 +5,20 @@ import '../bloc/multi_modal_bloc.dart';
 
 class InputWidget extends StatelessWidget {
   final String selectedImage;
+
   InputWidget({super.key, required this.selectedImage});
 
   final TextEditingController _controller = TextEditingController();
 
-
   @override
   Widget build(BuildContext context) {
-    void handleSubmit(String text) async {
+    Future<void> handleSubmit(String text) async {
       _controller.clear();
       BlocProvider.of<MultiModalBloc>(context).add(
         MultiModalFetchData(text: text, imagePath: selectedImage),
       );
     }
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextField(
