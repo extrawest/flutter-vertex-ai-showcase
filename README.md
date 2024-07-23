@@ -98,5 +98,5 @@ To make VertexAi work, you need to enable it in Google Cloud and setup billing f
 
 Created by Oleksandr Samoilenko
 
-[Extrawest.com](https://www.extrawest.com), 2023
+[Extrawest.com](https://www.extrawest.com), 2024
 
