@@ -1,8 +1,6 @@
 include: package:lint/strict.yaml # For production apps
 
 analyzer:
-  plugins:
-    - dart_code_metrics
 
   exclude:
     - "build/**"

@@ -19,21 +19,5 @@ class MyApp extends StatelessWidget {
       title: 'Samoilenko AI App',
       routerConfig: goRouter,
     );
-    // return MaterialApp(
-    //   title: 'Flutter Demo',
-    //   theme: ThemeData(
-    //     colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-    //     useMaterial3: true,
-    //   ),
-    //   home: RepositoryProvider(
-    //     create: (context) => VertexService(),
-    //     child: BlocProvider<ImageDescriptionBloc>(
-    //       create: (content) => ImageDescriptionBloc(
-    //         vertexService: content.read<VertexService>(),
-    //       ),
-    //       child: const MultiModalScreen(title: 'Flutter Vertex Ai Demo'),
-    //     ),
-    //   ),
-    // );
   }
 }
