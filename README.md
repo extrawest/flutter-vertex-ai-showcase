@@ -92,9 +92,15 @@ You also need to setup a firebase project or connect the existing one.
 To make VertexAi work, you need to enable it in Google Cloud and setup billing for it.
 
 
+
+
+
 ## Preview
-![Video Preview](video/vertex-image.mp4)
-![Video Preview](video/vertex-text.mp4)
+https://github.com/user-attachments/assets/9977dcb2-b305-44be-87ea-2e31c8ec4a21
+
+https://github.com/user-attachments/assets/5d2f01e9-5e9d-4ce0-acb9-a02aaed50f0d
+
+
 
 Created by Oleksandr Samoilenko
 
